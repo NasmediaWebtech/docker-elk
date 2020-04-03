@@ -1,0 +1,23 @@
+# 아래 내용을 참고하여 수정한다(실습환경에 맞는 IP로 수정 입력해야한다)
+# 전체 내용은 아래 첨부파일을 참고하세요.
+name: "webserver1"
+tags: ["webserver", "customer"]
+
+fields_under_root: true	
+fields:
+	service: "customer_contact_service"
+
+filebeat.inputs:
+- type: log
+  enabled: true
+
+  paths:
+    - /var/log/mytest.log
+
+output.logstash:
+  # The Logstash hosts
+  hosts: ["172.20.1.5:5443"]
+
+  # Optional SSL. By default is off.
+  # List of root certificates for HTTPS server verifications
+  ssl.certificate_authorities: ["/etc/pki/tls/certs/logstash-forwarder.crt"]

@@ -1,0 +1,14 @@
+filebeat.prospectors: 
+  - input_type: log 
+    path: 
+      - /path/to/apache/access.log 
+    document_type: apache 
+
+  - input_type: log 
+    path: 
+      - /path/to/db/mydb.log 
+    document_type: postgres 
+
+output.logstash: 
+  hosts: [ "localhost:5044" ]
+
