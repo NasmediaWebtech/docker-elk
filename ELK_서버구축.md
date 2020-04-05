@@ -33,8 +33,10 @@
 
   6. 
     * ELK Compose 실행/정지
-    `$ sudo docker-compose up`
+    `$ sudo docker-compose up -d` 
     `$ sudo docker-compose down`
 
+    * ELK Compose 로그확인
+    `$ docker-compose logs -f`
     * 데이터 싹다 삭제하고 내림 
     `$ sudo docker-compose down -v`
